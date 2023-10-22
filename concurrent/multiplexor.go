@@ -9,7 +9,7 @@ func Funnel(in []chan int) <-chan int {
 	wg.Add(len(in))
 
 	for _, c := range in {
-		go func(c <-chan int) {
+		go func(<-chan int) {
 			defer wg.Done()
 			for msg := range c {
 				dest <- msg
