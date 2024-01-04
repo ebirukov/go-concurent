@@ -3,6 +3,7 @@ package concurrent
 import (
 	"sync"
 	"testing"
+	"fmt"
 )
 
 func TestFunnel(t *testing.T) {
@@ -28,6 +29,6 @@ func TestFunnel(t *testing.T) {
 	wg.Wait()
 
 	for r := range res {
-		println(r)
+		fmt.Println(r)
 	}
 }
